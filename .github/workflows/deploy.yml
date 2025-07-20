@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & Cache Dependencies
         uses: ./.github/actions/cached-dep
+        with:
+          caching: 'false'  # Disable caching for linting
       - name: Lint code
         run: npm run lint
   test:
